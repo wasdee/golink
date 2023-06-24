@@ -1,0 +1,17 @@
+# fly.toml app configuration file generated for codustry-golink on 2023-06-24T19:35:20+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "codustry-golink"
+primary_region = "sin"
+
+[build]
+  image = "ghcr.io/tailscale/golink:main"
+
+[deploy]
+  strategy = "immediate"
+
+[[mounts]]
+  source = "golink_storage"
+  destination = "/home/nonroot"
